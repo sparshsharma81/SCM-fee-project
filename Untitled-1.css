@@ -1,0 +1,298 @@
+/* *{
+    background-image: url('background.jpg.jpg');
+    opacity: 50%;
+    z index:-1;
+} */
+/* Reset some default styles */
+body, h1, h2, p {
+    margin: 10;
+    padding: 25;
+}
+
+/* Basic styling */
+body {
+    font-family: Arial, sans-serif;
+    /*background-color: #a9dbe775;*/
+    background-color:yellow;
+    color: #322947;
+}
+
+header {
+    /*background-color: #333;*/
+    color: #e6d6d6;
+    height:3.6rem;
+    padding: 1rem;
+    text-align: center;
+}
+
+main {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.job-listing {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 1rem;
+    margin-bottom: 1rem;
+}
+
+.logo{
+    padding-top:0px;
+    transition: transform 1s ease-in-out;
+    /*transform:rotate(45deg);*/
+    /* display:flex; */                                     
+    margin:0px;
+    /* position-top:0px;
+    position-right:0px; */
+}
+.logo:hover {
+    transform: rotate(360deg); /* Add your desired transformation */
+}
+.job-listing h2 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.job-listing a {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background-color: #333;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 1rem;
+}
+
+.job-listing a:hover {
+    background-color: #555;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 1rem;
+}/* Add this CSS code to style the navbar */
+
+nav {
+    background-color: #333;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #641ab9;
+    font-weight: bold;
+}
+body{
+    background-color:black;}
+
+* {
+margin: 0px;
+padding: 0px;
+}
+html, body {
+font-family: fantasy;
+font-size: 15px;
+}
+.container {
+width: 1170px;
+margin: 0px auto;
+}
+.width-100 {
+width: 100%;
+float: left;
+/*background-image:url('stars.jpg');*/
+background-repeat: no-repeat;
+background-position: center;
+background-size: cover;
+}
+.width-66 {
+width: 66%;
+float: left;
+}
+.width-50 {
+float: left;
+width: 50%;
+}
+.width-75 {
+width: 75%;
+float: left;
+}
+.width-33 {
+width: 33%;
+float: left;
+}
+.width-25 {
+width: 25%;
+float: left;
+}
+.background-image{
+    background-image:url('stars.jpg');
+}
+.header {
+padding-top: 20px;
+padding-bottom: 60px
+}
+.header-menu {
+list-style: none;
+margin-top: 10px;
+}
+.header-menu li {
+float: left;
+font-size: 15px;
+}
+.header-menu a {
+font-size: 20px;
+text-decoration: none;
+color:#d9d9d9;
+font-weight: 500;
+padding: 10px;
+}
+.button-job-post {
+background-color: #e34216;
+color: white;
+border: none;
+border-radius: 2px;
+font-size: 14px;
+float: left;
+padding: 10px;
+text-decoration: none;
+}
+.button-resume {
+background-color: #17acda;
+color: white;
+border: none;
+border-radius: 2px;
+font-size: 14px;
+float: left;
+margin-left: 10px;
+padding: 10px;
+text-decoration: none;
+}
+
+.hovering:hover{
+
+    animation: fadeInUp 0.3s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+.button-resume:hover {
+    background-color: rgb(7, 76, 236);
+}
+/*.botton-resume:hover {
+    background-color:pink;
+}*/
+.banner-section {
+background-image: url("test.jpg");
+background-repeat: no-repeat;
+background-size: cover;
+text-align: center;
+height: 350px;
+position: relative;
+width: 100%;
+}
+/*.bodying{
+    background-image:url('stars.jpg');
+    
+}*/
+.banner-heading {
+font-size: 40px;
+color: white;
+padding-top: 70px;
+}
+.banner-para {
+font-size: 15px;
+color: #fff;
+padding-top: 10px;
+}
+
+.search-sect {
+margin-top: 40px;
+width: 25%;
+float: left;
+position: relative;
+}
+.search-textbox {
+height: 40px;
+width: 100%;
+padding-left: 10px;
+border-top: none;
+border-bottom: none;
+border-color: #d9d9d9;
+border-right: none;
+border-width: 1px;
+}
+.search-button {
+width: 100%;
+height: 40px;
+background-color: #e34216;
+border: none;
+color: white;
+}
+.search-sect .icons {
+position: absolute;
+top: 12px;
+right: 10px
+}
+/****SKILL SECTION SKILL SECTION SKILL SECTION****/
+.skill-section {
+/*background-color: #00000008;*/
+/*background-color: red;*/
+padding-top: 40px;
+padding-bottom: 40px;
+}
+.skill-list {
+background-color: white;
+width: 23%;
+float: left;
+margin-left: 15px;
+padding-top: 10px;
+border-radius: 5px;
+padding-left: 8px;
+padding-bottom: 10px;
+}
+.skill-list img {
+width: 70px;
+height: 70px;
+border-radius: 100px;
+}
+.skill-list h4 {
+font-size: 16px;
+color: #313538;
+font-weight: bold;
+padding-left: 8px;
+padding-top: 8px
+}
+.view-button {
+width: 45%;
+height: 20px;
+border-radius: 20px;
+border: none;
+background-color: #e34216;
+color: white;
+font-size: 11px;
+padding-left: 5px;
+margin-top: 15px;
+}

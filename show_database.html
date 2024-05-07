@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume Database</title>
+    <link rel="stylesheet" href="https://pyscript.net/releases/2023.11.1/core.css" />
+    <script type="module" src="https://pyscript.net/releases/2023.11.1/core.js"></script>
+    <py-script src="app.py"></py-script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Resume Database</h1>
+    </header>
+
+    <div class="container">
+        <ul>
+            {% for resume in resumes %}
+                <li>
+                    <h2>{{ resume[1] }}'s Resume</h2>
+                    <p><strong>Email:</strong> {{ resume[2] }}</p>
+                    <p><strong>Phone:</strong> {{ resume[3] }}</p>
+                    <p><strong>Address:</strong> {{ resume[4] }}</p>
+                    <p><strong>Objective:</strong> {{ resume[5] }}</p>
+                    <p><strong>Education:</strong> {{ resume[6] }}</p>
+                    <p><strong>Experience:</strong> {{ resume[7] }}</p>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+</body>
+</html>

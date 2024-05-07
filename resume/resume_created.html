@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Resume Created</title>
+</head>
+
+<body>
+
+    <h1>Your Resume Has Been Created!</h1>
+
+    <div>
+        <h2>Resume Details:</h2>
+        <table border="1">
+            <tr>
+                <th>Field</th>
+                <th>Details</th>
+            </tr>
+            <tr>
+                <td>Name</td>
+                <td>{{ resume_data['user_name'] }}</td>
+            </tr>
+            <tr>
+                <td>Email</td>
+                <td>{{ resume_data['user_email'] }}</td>
+            </tr>
+            <tr>
+                <td>Phone</td>
+                <td>{{ resume_data['user_phone'] }}</td>
+            </tr>
+            <tr>
+                <td>Address</td>
+                <td>{{ resume_data['user_address'] }}</td>
+            </tr>
+            <tr>
+                <td>Objective</td>
+                <td>{{ resume_data['user_objective'] }}</td>
+            </tr>
+            <tr>
+                <td>Education</td>
+                <td>{{ resume_data['user_education'] }}</td>
+            </tr>
+            <tr>
+                <td>Experience</td>
+                <td>{{ resume_data['user_experience'] }}</td>
+            </tr>
+        </table>
+    </div>
+
+    <div>
+        <a href="/">Back to Home</a>
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            color: #333;
+            background: url('fire.jpg') no-repeat center center fixed;
+            background-size: cover;
+            opacity: 1; /* opacity 1 hi thik hai */
+        }
+        .hovering:hover{
+            
+            color:rgb(214, 69, 69);
+        }
+
+        header {
+            background-color: #2c3e50; /* Darker shade kiya hai professional look dene ke liye */
+            padding: 15px;
+            position: relative;
+            text-align: center;
+            color: white;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            z-index: 1;
+        }
+
+        nav {
+            background-color: #34495e; /* Darker shade for a professional look */
+            padding: 10px 0;
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul li {
+            margin-right: 20px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            font-size: 1.2em;
+            opacity: 0.8;
+            transition: opacity 0.3s ease-in-out;
+        }
+
+        nav ul li a:hover {
+            opacity: 1;
+        }
+
+        header,
+        nav,
+        .width-100.banner-section,
+        .width-100.skill-section,
+        footer {
+            animation: fadeIn 1s ease-out;
+        }
+        .footer-class{
+            color:yellow;
+        }
+
+        .banner-heading,
+        .banner-para,
+        .search-textbox,
+        .search-button,
+        .skill-list,
+        .view-button,
+        footer p {
+            animation: fadeInUp 0.5s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .width-100.banner-section {
+            background-color: rgba(52, 152, 219, 0.8); /* Professional blue color */
+            padding: 50px 0;
+            text-align: center;
+            color: white;
+        }
+
+        .banner-heading {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+
+        .banner-para {
+            font-size: 1.2em;
+            margin-bottom: 30px;
+        }
+
+        .search-sect input {
+            padding: 10px;
+            font-size: 1em;
+            margin-right: 10px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+
+        .search-button {
+            background-color: #2c3e50; /* Darker shade for a professional look */
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1.2em;
+            cursor: pointer;
+            position: relative;
+            z-index: 1;
+            backdrop-filter: blur(100px); /* Adjust the blur value as needed */
+            transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease, color 0.3s ease;
+        }
+        
+        .search-button:hover {
+            background-color: #34495e; /* Darker shade on hover for consistency */
+        }
+        
+        .search-button:before {
+            content: '';
+            background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            background-size: 400%;
+            z-index: -1;
+            filter: blur(5px);
+            width: calc(100% + 4px);
+            height: calc(100% + 4px);
+            animation: glowing 20s linear infinite;
+            opacity:0;
+            transition: opacity .3s ease-in-out;
+            border-radius: 5px;
+        }
+        
+        .search-button:active {
+            color: #000;
+        }
+        
+        .search-button:active:before {
+            background: transparent;
+        }
+        
+        .search-button:hover:before {
+            opacity: 1;
+        }
+        
+        @keyframes glowing {
+            0% { background-position: 0 0; }
+            50% { background-position: 400% 0; }
+            100% { background-position: 0 0; }
+        }
+        
+
+        .width-100.skill-section {
+            background-color: rgba(236, 240, 241, 0.9); /* Light gray for a clean look */
+            padding: 50px 0;
+            text-align: center;
+        }
+        
+
+        .skill-list {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width:300px;
+            padding:20px;
+            position:relative;
+            left:650px;
+        }
+        
+        .skill-list1 {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width:300px;
+            padding:20px;
+            position:relative;
+            left:50px;
+            bottom:800px;
+        }
+
+        .skill-img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin-right: 20px;
+        }
+
+        .view-button {
+            background-color: #3498db; /* Professional blue color */
+            height: 50px;
+            color: white;
+            border: none;
+            padding: 1px 20px;
+            font-size: 1em;
+            cursor: pointer;
+        }
+
+        .view-button:hover {
+            background-color: #2980b9; /* Darker shade on hover for consistency */
+        }
+
+        footer {
+            background-color: #81b1e1; /* Darker shade for a professional look */
+            color:white;
+            position: relative;
+            bottom: 0px;
+            opacity: 0.9;
+            z-index: 3;
+            text-align: center;
+            padding: 4px 0;
+            width: 100%;
+        }
+
+        .firelogo {
+            width: 200px;
+            height: 150px;
+            position: absolute;
+            top: 1px;
+            border-radius:60%;
+            z-index: 3;
+        }
+            .suggestion-box {
+                display: none;
+                position: absolute;
+                background-color: white;
+                box-shadow: 0 2px 5px rgba(49, 198, 8, 0.1);
+                border-radius: 5px;
+                max-height: 200px;
+                overflow-y: auto;
+                z-index: 1000;
+            }
+    
+            .suggestion-box-item {
+                padding: 10px;
+                cursor: pointer;
+            }
+    
+            .suggestion-box-item:hover {
+                background-color: #f0f0f0;
+            }
+            .create-resume-button {
+                position: absolute;
+                top: 10px;
+                right: 10px;
+                background-color: #27ae60; /* Default professional color */
+                color: #fff;
+                padding: 10px 20px;
+                text-decoration: none;
+                border-radius: 10px;
+                overflow: hidden;
+                z-index: 1;
+                transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease, color 0.3s ease;
+            }
+            
+            .create-resume-button:hover {
+                background-color: #219f56; /* Hover color */
+                box-shadow: 0 0 10px rgba(39, 174, 96, 0.7);
+                transform: scale(1.05);
+            }
+            
+            .create-resume-button:before {
+                content: '';
+                background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+                position: absolute;
+                top: -2px;
+                left: -2px;
+                background-size: 400%;
+                z-index: -1;
+                filter: blur(15px);
+                width: calc(100% + 4px);
+                height: calc(100% + 4px);
+                animation: glowing 20s linear infinite;
+                opacity: 0;
+                transition: opacity .3s ease-in-out;
+                border-radius: 10px;
+            }
+            
+            .create-resume-button:active {
+                color: #000;
+            }
+            
+            .create-resume-button:active:before {
+                background: transparent;
+            }
+            
+            .create-resume-button:hover:before {
+                opacity: 1;
+            }
+            
+            .create-resume-button:after {
+                content: '';
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                background: #079a70; /* Adjusted background color for better text visibility */
+                left: 0;
+                top: 0;
+                border-radius: 10px;
+                z-index: -2;
+            }
+            
+            @keyframes glowing {
+                0% { background-position: 0 0; }
+                50% { background-position: 400% 0; }
+                100% { background-position: 0 0; }
+            }
+            .white-box {
+                
+                padding: 20px;
+                position:relative;
+                left:640px;
+                border-radius: 10px;
+                border-right:4px;
+                border-left:30px;
+                width:300px;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            }
+            
+            
+            
+            
+        </style>
+        <title>Job Seekers</title>
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                const searchBoxes = document.querySelectorAll('.search-textbox');
+    
+                searchBoxes.forEach(function (box) {
+                    box.addEventListener('click', function () {
+                        showSuggestedCompanies(box);
+                    });
+                });
+    
+                function showSuggestedCompanies(inputBox) {
+                    let suggestions;
+    
+                    // Determine which input box was clicked and provide suggestions accordingly
+                    switch (inputBox.placeholder) {
+                        case 'Search Company':
+                            //suggestions = ['Google','Apple','IBM' 'Microsoft', 'Amazon','Flipkart','Reliance Industries','HDFC Bank','ITC']; -->
+                            suggestions = [
+  'Google',
+  'Microsoft',
+  'Apple',
+  'IBM',
+  'Amazon',
+  'JPMorgan Chase',
+  'Bank of America',
+  'Goldman Sachs',
+  'Wells Fargo',
+  'Citibank',
+  'Mayo Clinic',
+  'Pfizer',
+  'Johnson & Johnson',
+  'Siemens Healthineers',
+  'Merck',
+  'Harvard University',
+  'Stanford University',
+  'MIT (Massachusetts Institute of Technology)',
+  'Khan Academy',
+  'Pearson',
+  'Toyota',
+  'General Electric (GE)',
+  'Boeing',
+  'Procter & Gamble',
+  'Samsung',
+  'Walmart',
+  'Amazon',
+  'Target',
+  'Alibaba',
+  'IKEA',
+  'Teleperformance',
+  'Convergys',
+  'Sykes',
+  'Accenture',
+  'Sitel',
+  'WPP',
+  'Omnicom Group',
+  'Publicis Groupe',
+  'Interpublic Group (IPG)',
+  'Dentsu',
+  'Marriott International',
+  'Hilton Worldwide',
+  'Airbnb',
+  'Starbucks',
+  'Delta Air Lines',
+  'FedEx',
+  'UPS',
+  'DHL',
+  'Maersk',
+  'Uber Freight'
+];
+
+                            break;
+                        case 'Select Location':
+                            //suggestions = ['Delhi', 'Mumbai', 'Chandigarh','Punjab','Haryana','Kashmir','Sikkim','Rajasthan'];
+                            suggestions = [
+  'Andhra Pradesh',
+  'Arunachal Pradesh',
+  'Assam',
+  'Bihar',
+  'Chhattisgarh',
+  'Goa',
+  'Gujarat',
+  'Haryana',
+  'Himachal Pradesh',
+  'Jharkhand',
+  'Karnataka',
+  'Kerala',
+  'Madhya Pradesh',
+  'Maharashtra',
+  'Manipur',
+  'Meghalaya',
+  'Mizoram',
+  'Nagaland',
+  'Odisha',
+  'Punjab',
+  'Rajasthan',
+  'Sikkim',
+  'Tamil Nadu',
+  'Telangana',
+  'Tripura',
+  'Uttar Pradesh',
+  'Uttarakhand',
+  'West Bengal',
+  'Andaman and Nicobar Islands',
+  'Chandigarh',
+  'Dadra and Nagar Haveli',
+  'Daman and Diu',
+  'Lakshadweep',
+  'Delhi',
+  'Puducherry'
+];
+
+                            break;
+                        case 'All categories':
+                            suggestions = //['Marketing and Advertising','Finance and Banking', 'Information Technology (IT)','Education','Healthcare','Manufacturing','Hospitality','Transportation and Logistics','Customer Service'];
+                            ['IT Sector', 'Call Center', 'BPO', 'Sales', 'Marketing', 'Finance', 'Human Resources', 'Engineering', 'Healthcare', 'Education',
+  'Manufacturing', 'Retail', 'Hospitality', 'Telecommunications', 'Transportation', 'Media and Entertainment', 'Real Estate', 'Construction',
+  'Automotive', 'Aerospace', 'Energy', 'Pharmaceutical', 'Biotechnology', 'Customer Service','Research and Development', 'Fashion', 'E-commerce', 'Food and Beverage',
+  'Sports', 'Legal', 'Environmental', 'Non-profit', 'Government', 'Social Services']
+                            break;
+                        default:
+                            suggestions = [];
+                            break;
+                    }
+    
+                    // Create a suggestion box
+                    const suggestionBox = document.createElement('div');
+                    suggestionBox.className = 'suggestion-box';
+    
+                    // Populate the suggestion box with items
+                    suggestions.forEach(function (suggestion) {
+                        const suggestionItem = document.createElement('div');
+                        suggestionItem.className = 'suggestion-box-item';
+                        suggestionItem.textContent = suggestion;
+    
+                        // Handle click on a suggestion
+                        suggestionItem.addEventListener('click', function () {
+                            inputBox.value = suggestion;
+                            suggestionBox.style.display = 'none';
+                        });
+    
+                        suggestionBox.appendChild(suggestionItem);
+                    });
+    
+                    // Set the position of the suggestion box
+                    const inputBoxRect = inputBox.getBoundingClientRect();
+                    suggestionBox.style.left = inputBoxRect.left + 'px';
+                    suggestionBox.style.top = inputBoxRect.bottom + 'px';
+    
+                    // Append the suggestion box to the body
+                    document.body.appendChild(suggestionBox);
+    
+                    // Show the suggestion box
+                    suggestionBox.style.display = 'block';
+    
+                    // Handle clicks outside the suggestion box to close it
+                    document.addEventListener('click', function (event) {
+                        if (!suggestionBox.contains(event.target) && event.target !== inputBox) {
+                            suggestionBox.style.display = 'none';
+                            document.removeEventListener('click', arguments.callee);
+                        }
+                    });
+                }
+            });
+        </script>
+    </head>
+
+<body>
+
+    <header>
+        <h1>Welcome</h1>
+    </header>
+    <div>
+        <img src="firelogo.png" class="firelogo" alt="logo">
+    </div>
+
+    <nav>
+        <ul>
+            <li><a href="new.html" class="hovering">Home</a></li>
+            <li><a href="jobs.,html.html" class="hovering">Jobs</a></li>
+            <li><a href="services.html" class="hovering">Services</a></li>
+            <li><a href="contact.html" class="hovering">Contact Us</a></li>
+        </ul>
+    </nav>
+    <a href="resume.html" class="create-resume-button glow-on-hover">Create Resume</a>
+    <div class="width-100 banner-section">
+        <div class="container">
+
+            <h1 class="banner-heading">Find The Best Job For Your Future</h1>
+            <p class="banner-para">It's a long-established fact that a reader will be distracted by the readable.</p>
+            <div class="search-sect">
+                <input type="text" class="search-textbox" placeholder="Search Company">
+                <input type="text" class="search-textbox" placeholder="Select Location">
+                <input type="text" class="search-textbox" placeholder="All categories">
+                <a href="jobs.,html.html"><button class="search-button">
+                        Search Here
+                    </button></a>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="width-100 skill-section">
+        <div class="container">
+            <div class="white-box skill-list">
+                <div class="width-34">
+                    <img class="skill-img" src="image it.png" alt="IT Sector">
+                </div>
+                <div class="width-66">
+                    <h4>IT Sector</h4>
+                    <a href="jobs.,html.html"><button class="view-button">Explore Jobs</button></a>
+                </div>
+            </div>
+            <div class="skill-list">
+                <div class="width-33">
+                    <img class="skill-img" src="call center.jpg" alt="Call Center">
+                </div>
+                <div class="width-66">
+                    <h4>Call Center</h4>
+                    <a href="jobs.,html.html"><button class="view-button">Explore Jobs</button></a>
+                </div>
+            </div>
+            <div class="skill-list">
+                <div class="width-33">
+                    <img class="skill-img" src="image BPO.png" alt="BPO">
+                </div>
+                <div class="width-66">
+                    <h4>BPO</h4>
+                    <a href="jobs.,html.html"><button class="view-button">Explore Jobs</button></a>
+                </div>
+            </div>
+            <div class="skill-list">
+                <div class="width-33">
+                    <img class="skill-img" src="image sales.png" alt="Sales">
+                </div>
+                <div class="width-66">
+                    <h4>Sales</h4>
+                    <a href="jobs.,html.html"><button class="view-button">Explore Jobs</button></a>
+                </div>
+            </div>
+            <div class="skill-list">
+                <div class="width-33">
+                    <img class="skill-img" src="call center.jpg" alt="Call Center">
+                </div>
+                <div class="width-66">
+                    <h4>Call Center</h4>
+                    <a href="jobs.,html.html"><button class="view-button">Explore Jobs</button></a>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+    
+    
+
+
+    <!-- <div class="left-section">
+    <div class="width-100 skill-section">
+        <div class="container">
+            <div class="white-box skill-list1">
+                <div class="width-33">
+                    <img class="skill-img" src="image it.png" alt="IT Sector">
+                </div>
+                <div class="width-66">
+                    <h4>IT Sector</h4>
+                    <a href="jobs.,html.html"><button class="view-button">Explore Jobs</button></a>
+                </div>
+            </div>
+            <div class="skill-list">
+                <div class="width-33">
+                    <img class="skill-img" src="call center.jpg" alt="Call Center">
+                </div>
+                <div class="width-66">
+                    <h4>Call Center</h4>
+                    <a href="jobs.,html.html"><button class="view-button">Explore Jobs</button></a>
+                </div>
+            </div>
+            <div class="skill-list">
+                <div class="width-33">
+                    <img class="skill-img" src="image BPO.png" alt="BPO">
+                </div>
+                <div class="width-66">
+                    <h4>BPO</h4>
+                    <a href="jobs.,html.html"><button class="view-button">Explore Jobs</button></a>
+                </div>
+            </div>
+            <div class="skill-list">
+                <div class="width-33">
+                    <img class="skill-img" src="image sales.png" alt="Sales">
+                </div>
+                <div class="width-66">
+                    <h4>Sales</h4>
+                    <a href="jobs.,html.html"><button class="view-button">Explore Jobs</button></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> -->
+
+    <footer class="foot">
+        <p class="footer-class"><a href="https://www.betterteam.com/job-boards">&copy; 2023 Job Apply Platform</p></a>
+    </footer>
+
+</body>
+
+</html>

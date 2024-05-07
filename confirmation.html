@@ -1,0 +1,24 @@
+<!-- Save this code in a file named 'confirmation.html' inside the 'templates' folder -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confirmation</title>
+</head>
+<body>
+    <h2>Confirmation</h2>
+    <p>Your resume has been successfully created. Here are the details:</p>
+    <ul>
+        <li><strong>Name:</strong> {{ resume[1] }}</li>
+        <li><strong>Email:</strong> {{ resume[2] }}</li>
+        <li><strong>Phone:</strong> {{ resume[3] }}</li>
+        <li><strong>Address:</strong> {{ resume[4] }}</li>
+        <li><strong>Objective:</strong> {{ resume[5] }}</li>
+        <li><strong>Education:</strong> {{ resume[6] }}</li>
+        <li><strong>Experience:</strong> {{ resume[7] }}</li>
+    </ul>
+    <button onclick="showResumeForm()">Edit Resume</button>
+</body>
+</html>

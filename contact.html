@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Job Board</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f5f5f5;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            font-size: 16px; /* Default font size */
+        }
+
+        header {
+            background-color: #3498db;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0; /* Reduced padding */
+            font-size: 1.8em;
+        }
+
+        .container {
+            max-width: 100%;
+            margin: 20px auto;
+            padding: 10px; /* Reduced padding */
+            background-color: #fff;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        .contact-form {
+            margin-bottom: 20px;
+        }
+
+        .contact-form h2 {
+            font-size: 1.8em;
+            margin-bottom: 15px;
+            color: #333;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .form-group input[type="text"],
+        .form-group input[type="email"],
+        .form-group textarea {
+            width: 100%;
+            padding: 10px; /* Reduced padding */
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+            margin-top: 5px;
+        }
+
+        .form-group textarea {
+            height: 100px; /* Reduced height */
+            resize: vertical;
+        }
+
+        .submit-button {
+            display: inline-block;
+            background-color: #3498db;
+            color: #fff;
+            padding: 12px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .submit-button:hover {
+            background-color: #2980b9;
+        }
+
+        .confirmation-message {
+            text-align: center;
+            display: none;
+            color: #4CAF50;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 20px;
+            padding: 10px 0; /* Reduced padding */
+            background-color: #3498db;
+            color: #fff;
+            border-radius: 8px;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        /* Mobile Styles */
+        @media only screen and (max-width: 600px) {
+            body {
+                font-size: 14px;
+            }
+
+            .form-group input[type="text"],
+            .form-group input[type="email"],
+            .form-group textarea {
+                padding: 8px; /* Reduced padding */
+                font-size: 14px;
+            }
+
+            .form-group textarea {
+                height: 80px; /* Reduced height */
+            }
+        }
+
+        /* Tablet Styles */
+        @media only screen and (min-width: 601px) and (max-width: 1024px) {
+            body {
+                font-size: 16px;
+            }
+
+            .container {
+                max-width: 600px;
+            }
+        }
+        .firelogo {
+            width: 200px;
+            height: 150px;
+            position: absolute;
+            top: 1px;
+            border-radius: 60%;
+            z-index: 3;
+            left: 7em;
+            margin-left: -100px; /* Center the logo */
+        }
+        .firelogo:hover{
+            
+                transform: scale(1.1); /* Increase the scale as needed */
+                opacity: 0.8; /* Adjust the opacity as needed */
+            
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Contact Us</h1>
+        <p>Have questions or feedback? Get in touch with us.</p>
+    </header>
+    <div>
+        <a href="new.html">
+        <img src="firelogo.png" class="firelogo" alt="logo">
+        </a>
+    </div>
+
+    <div class="container">
+        <div class="contact-form" id="contactFormDiv">
+            <h2>Send Us a Message</h2>
+            <form id="contactForm" action="#" method="POST">
+                <div class="form-group">
+                    <label for="name">Your Name:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Your Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" required></textarea>
+                </div>
+
+                <button type="submit" class="submit-button">Send Message</button>
+            </form>
+        </div>
+
+        <div class="confirmation-message hidden" id="confirmationMessage">
+            <h2>Message Sent!</h2>
+            <p>Thank you for getting in touch. We'll respond to your message as soon as possible.</p>
+        </div>
+    </div>
+
+    <footer>
+        <p>Contact us to get assistance with your job search or platform inquiries.</p>
+    </footer>
+
+    <script>
+        document.getElementById("contactForm").addEventListener("submit", function (e) {
+            e.preventDefault();
+            document.getElementById("contactFormDiv").style.display = "none";
+            document.getElementById("confirmationMessage").style.display = "block";
+        });
+    </script>
+</body>
+
+</html>

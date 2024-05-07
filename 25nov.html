@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            color: #333;
+            background: url('fire.jpg') no-repeat center center fixed;
+            background-size: cover;
+            opacity: 1;
+        }
+
+        .hovering:hover {
+            color: rgb(214, 69, 69);
+        }
+
+        header {
+            background-color: #2c3e50;
+            padding: 15px;
+            position: relative;
+            text-align: center;
+            color: white;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            z-index: 1;
+        }
+
+        nav {
+            background-color: #34495e;
+            padding: 10px 0;
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul li {
+            margin-right: 20px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            font-size: 1.2em;
+            opacity: 0.8;
+            transition: opacity 0.3s ease-in-out;
+        }
+
+        nav ul li a:hover {
+            opacity: 1;
+        }
+
+        header,
+        nav,
+        .width-100.banner-section,
+        .width-100.skill-section,
+        footer {
+            animation: fadeIn 1s ease-out;
+        }
+
+        .footer-class {
+            color: yellow;
+        }
+
+        .banner-heading,
+        .banner-para,
+        .search-textbox,
+        .search-button,
+        .skill-list,
+        .view-button,
+        footer p {
+            animation: fadeInUp 0.5s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .width-100.banner-section {
+            background-color: rgba(52, 152, 219, 0.8);
+            padding: 50px 0;
+            text-align: center;
+            color: white;
+        }
+
+        .banner-heading {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+
+        .banner-para {
+            font-size: 1.2em;
+            margin-bottom: 30px;
+        }
+
+        .search-sect input {
+            padding: 10px;
+            font-size: 1em;
+            margin-right: 10px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+
+        .search-button {
+            background-color: #2c3e50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1.2em;
+            cursor: pointer;
+            position: relative;
+            z-index: 1;
+            backdrop-filter: blur(100px);
+            transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease, color 0.3s ease;
+        }
+
+        .search-button:hover {
+            background-color: #34495e;
+        }
+
+        .search-button:before {
+            content: '';
+            background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            background-size: 400%;
+            z-index: -1;
+            filter: blur(5px);
+            width: calc(100% + 4px);
+            height: calc(100% + 4px);
+            animation: glowing 20s linear infinite;
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out;
+            border-radius: 5px;
+        }
+
+        .search-button:active {
+            color: #000;
+        }
+
+        .search-button:active:before {
+            background: transparent;
+        }
+
+        .search-button:hover:before {
+            opacity: 1;
+        }
+
+        @keyframes glowing {
+            0% {
+                background-position: 0 0;
+            }
+
+            50% {
+                background-position: 400% 0;
+            }
+
+            100% {
+                background-position: 0 0;
+            }
+        }
+
+        .width-100.skill-section {
+            background-color: rgba(236, 240, 241, 0.9);
+            padding: 50px 0;
+            text-align: center;
+        }
+
+        .skill-list {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            padding: 20px;
+        }
+
+        .skill-list img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin-right: 20px;
+        }
+
+        .view-button {
+            background-color: #3498db;
+            height: 50px;
+            color: white;
+            border: none;
+            padding: 1px 20px;
+            font-size: 1em;
+            cursor: pointer;
+        }
+
+        .view-button:hover {
+            background-color: #2980b9;
+        }
+
+        footer {
+            background-color: #81b1e1;
+            color: white;
+            position: relative;
+            bottom: 0px;
+            opacity: 0.9;
+            z-index: 3;
+            text-align: center;
+            padding: 4px 0;
+            width: 100%;
+        }
+
+        .firelogo {
+            width: 200px;
+            height: 150px;
+            position: absolute;
+            top: 1px;
+            border-radius: 60%;
+            z-index: 3;
+        }
+
+        .suggestion-box {
+            display: none;
+            position: absolute;
+            background-color: white;
+            box-shadow: 0 2px 5px rgba(49, 198, 8, 0.1);
+            border-radius: 5px;
+            max-height: 200px;
+            overflow-y: auto;
+            z-index: 1000;
+        }
+
+        .suggestion-box-item {
+            padding: 10px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .suggestion-box-item:hover {
+            background-color: #f0f0f0;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Job Portal</h1>
+        <p>Your Dream Job Awaits</p>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="#home" class="hovering">Home</a></li>
+            <li><a href="#about" class="hovering">About Us</a></li>
+            <li><a href="#services" class="hovering">Services</a></li>
+            <li><a href="#contact" class="hovering">Contact</a></li>
+        </ul>
+    </nav>
+    <div class="width-100 banner-section">
+        <div class="container">
+            <h2 class="banner-heading">Welcome to our Job Portal</h2>
+            <p class="banner-para">Find the job that fits your life</p>
+            <div class="search-sect">
+                <input type="text" class="search-textbox" placeholder="Search Company">
+                <button class="search-button">Search</button>
+            </div>
+        </div>
+    </div>
+    <div class="width-100 skill-section">
+        <div class="container">
+            <div class="skill-list">
+                <img class="skill-img" src="image it.png" alt="IT Sector">
+                <h4>IT Sector</h4>
+                <a href="jobs.html"><button class="view-button">Explore Jobs</button></a>
+            </div>
+            <div class="skill-list">
+                <img class="skill-img" src="biotechnology.jpg" alt="Biotechnology">
+                <h4>Biotechnology</h4>
+                <a href="jobs.html"><button class="view-button">Explore Jobs</button></a>
+            </div>
+            <div class="skill-list">
+                <img class="skill-img" src="transportation.jpg" alt="Transportation">
+                <h4>Transportation</h4>
+                <a href="jobs.html"><button class="view-button">Explore Jobs</button></a>
+            </div>
+            <div class="skill-list">
+                <img class="skill-img" src="image BPO.png" alt="BPO">
+                <h4>BPO</h4>
+                <a href="jobs.html"><button class="view-button">Explore Jobs</button></a>
+            </div>
+            <div class="skill-list">
+                <img class="skill-img" src="image sales.png" alt="Sales">
+                <h4>Sales</h4>
+                <a href="jobs.html"><button class="view-button">Explore Jobs</button></a>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <img src="firelogo.png" alt="Fire Logo" class="firelogo">
+        <p class="footer-class">© 2023 Job Portal. All rights reserved.</p>
+    </footer>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const searchBoxes = document.querySelectorAll('.search-textbox');
+
+            searchBoxes.forEach(function (box) {
+                box.addEventListener('click', function () {
+                    showSuggestedCompanies(box);
+                });
+            });
+
+            function showSuggestedCompanies(inputBox) {
+                const suggestions = getSuggestions(inputBox.placeholder);
+
+                const suggestionBox = createSuggestionBox(suggestions, inputBox);
+
+                document.body.appendChild(suggestionBox);
+
+                suggestionBox.style.display = 'block';
+
+                document.addEventListener('click', function (event) {
+                    if (!suggestionBox.contains(event.target) && event.target !== inputBox) {
+                        suggestionBox.style.display = 'none';
+                        document.removeEventListener('click', arguments.callee);
+                    }
+                });
+            }
+
+            function getSuggestions(placeholder) {
+                switch (placeholder) {
+                    case 'Search Company':
+                        return ['Google', 'Microsoft', 'Apple', 'IBM', 'Amazon', /* ... */];
+                    case 'Select Location':
+                        return ['Delhi', 'Mumbai', 'Chandigarh', /* ... */];
+                    case 'All categories':
+                        return ['IT Sector', 'Call Center', 'BPO', 'Sales', /* ... */];
+                    default:
+                        return [];
+                }
+            }
+
+            function createSuggestionBox(suggestions, inputBox) {
+                const suggestionBox = document.createElement('div');
+                suggestionBox.className = 'suggestion-box';
+
+                suggestions.forEach(function (suggestion) {
+                    const suggestionItem = document.createElement('div');
+                    suggestionItem.className = 'suggestion-box-item';
+                    suggestionItem.textContent = suggestion;
+
+                    suggestionItem.addEventListener('click', function () {
+                        inputBox.value = suggestion;
+                        suggestionBox.style.display = 'none';
+                    });
+
+                    suggestionBox.appendChild(suggestionItem);
+                });
+
+                const inputBoxRect = inputBox.getBoundingClientRect();
+                suggestionBox.style.left = inputBoxRect.left + 'px';
+                suggestionBox.style.top = inputBoxRect.bottom + 'px';
+
+                return suggestionBox;
+            }
+        });
+    </script>
+</body>
+
+</html>

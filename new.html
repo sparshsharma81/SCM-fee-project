@@ -1,0 +1,820 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Existing styles remain unchanged */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            color: #333;
+            background: url('fire.jpg') no-repeat center center fixed;
+            background-size: cover;
+            opacity: 1;
+        }
+
+        .hovering:hover {
+            color: rgb(214, 69, 69);
+        }
+
+        header {
+            background-color: #2c3e50;
+            padding: 15px;
+            position: relative;
+            text-align: center;
+            color: white;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            z-index: 1;
+        }
+
+        nav {
+            background-color: #34495e;
+            padding: 10px 0;
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul li {
+            margin-right: 20px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            font-size: 1.2em;
+            opacity: 0.8;
+            transition: opacity 0.3s ease-in-out;
+        }
+
+        nav ul li a:hover {
+            opacity: 1;
+        }
+
+        header,
+        nav,
+        .width-100.banner-section,
+        .width-100.skill-section,
+        footer {
+            animation: fadeIn 1s ease-out;
+        }
+
+        .footer-class {
+            color: yellow;
+        }
+
+        .banner-heading,
+        .banner-para,
+        .search-textbox,
+        .search-button,
+        .skill-list,
+        .view-button,
+        footer p {
+            animation: fadeInUp 0.5s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .width-100.banner-section {
+            background-color: rgba(52, 152, 219, 0.8);
+            padding: 50px 0;
+            text-align: center;
+            color: white;
+        }
+
+        .banner-heading {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+
+        .banner-para {
+            font-size: 1.2em;
+            margin-bottom: 30px;
+        }
+
+        .search-sect input {
+            padding: 10px;
+            font-size: 1em;
+            margin-right: 10px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+
+        .search-button {
+            background-color: #2c3e50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1.2em;
+            cursor: pointer;
+            position: relative;
+            z-index: 1;
+            backdrop-filter: blur(100px);
+            transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease, color 0.3s ease;
+        }
+
+        .search-button:hover {
+            background-color: #34495e;
+        }
+
+        .search-button:before {
+            content: '';
+            background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            background-size: 400%;
+            z-index: -1;
+            filter: blur(5px);
+            width: calc(100% + 4px);
+            height: calc(100% + 4px);
+            animation: glowing 20s linear infinite;
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out;
+            border-radius: 5px;
+        }
+
+        .search-button:active {
+            color: #000;
+        }
+
+        .search-button:active:before {
+            background: transparent;
+        }
+
+        .search-button:hover:before {
+            opacity: 1;
+        }
+
+        @keyframes glowing {
+            0% {
+                background-position: 0 0;
+            }
+
+            50% {
+                background-position: 400% 0;
+            }
+
+            100% {
+                background-position: 0 0;
+            }
+        }
+
+        .width-100.skill-section {
+            background-color: rgba(236, 240, 241, 0.9);
+            padding: 50px 0;
+            text-align: center;
+        }
+
+        .skill-list {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            padding: 20px;
+            position: relative;
+            left: 0;
+            margin-right: auto;
+            margin-left: auto;
+        }
+
+        .skill-list-2 {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            padding: 20px;
+            position: relative;
+            left: 0;
+            margin-right: auto;
+            margin-left: auto;
+        }
+
+        .skill-list1 {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            padding: 20px;
+            position: relative;
+            left: 0;
+            margin-right: auto;
+            margin-left: auto;
+        }
+
+        .skill-img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin-right: 20px;
+        }
+
+        .view-button {
+            background-color: #3498db;
+            height: 50px;
+            text-decoration: none;
+            color: white;
+            border: none;
+            text-align:center;
+            text-underline-offset: none;
+            padding:0.3em;
+            font-size: 1em;
+            cursor: pointer;
+        }
+
+        .view-button:hover {
+            background-color: #2980b9;
+        }
+
+        footer {
+            background-color: #81b1e1;
+            color: white;
+            position: relative;
+            bottom: 0px;
+            opacity: 0.9;
+            z-index: 3;
+            text-align: center;
+            padding: 4px 0;
+            width: 100%;
+        }
+
+        .firelogo {
+            width: 200px;
+            height: 150px;
+            position: absolute;
+            top: 1px;
+            border-radius: 60%;
+            z-index: 3;
+            left: 7em;
+            margin-left: -100px; /* Center the logo */
+        }
+        .firelogo:hover{
+            
+                transform: scale(1.1); /* Increase the scale as needed */
+                opacity: 0.8; /* Adjust the opacity as needed */
+            
+        }
+
+        .suggestion-box {
+            display: none;
+            position: absolute;
+            background-color: white;
+            box-shadow: 0 2px 5px rgba(49, 198, 8, 0.1);
+            border-radius: 5px;
+            max-height: 200px;
+            overflow-y: auto;
+            z-index: 1000;
+        }
+
+        .suggestion-box-item {
+            padding: 10px;
+            cursor: pointer;
+        }
+
+        .suggestion-box-item:hover {
+            background-color: #f0f0f0;
+        }
+
+        .create-resume-button {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: #27ae60;
+            color: #fff;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 10px;
+            overflow: hidden;
+            z-index: 1;
+            transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease, color 0.3s ease;
+        }
+
+        .create-resume-button:hover {
+            background-color: #219f56;
+            box-shadow: 0 0 10px rgba(39, 174, 96, 0.7);
+            transform: scale(1.05);
+        }
+
+        .create-resume-button:before {
+            content: '';
+            background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            background-size: 400%;
+            z-index: -1;
+            filter: blur(15px);
+            width: calc(100% + 4px);
+            height: calc(100% + 4px);
+            animation: glowing 2s linear infinite;
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out;
+            border-radius: 10px;
+        }
+
+        .create-resume-button:active {
+            color: #000;
+        }
+
+        .create-resume-button:active:before {
+            background: transparent;
+        }
+
+        .create-resume-button:hover:before {
+            opacity: 1;
+        }
+
+        .create-resume-button:after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: #079a70;
+            left: 0;
+            top: 0;
+            border-radius: 10px;
+            z-index: -2;
+        }
+
+        @keyframes glowing {
+            0% {
+                background-position: 0 0;
+            }
+
+            50% {
+                background-position: 400% 0;
+            }
+
+            100% {
+                background-position: 0 0;
+            }
+        }
+
+        .white-box {
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            background-color: rgba(255, 255, 255, 0.9);
+        }
+
+        .width-100.skill-section .container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            max-width: 1200px; /* Limit the container width */
+            margin-right: auto;
+            margin-left: auto;
+        }
+
+        .width-100.skill-section .white-box {
+            display: flex;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .width-100.skill-section .white-box .width-33 img {
+            width: 100%;
+            left:100px;
+            border-radius: 50%;
+        }
+
+        .width-100.skill-section .white-box .width-66 {
+            padding-left: 20px;
+            text-align: left;
+        }
+
+        .width-100.skill-section .white-box .width-66 h4 {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .width-100.skill-section .white-box .width-66 a .view-button {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 1px;
+            font-size: 1em;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        .width-100.skill-section .white-box .width-66 a .view-button:hover {
+            background-color: #2980b9;
+        }
+        .width-100.skill-section .white-box .width-33 img {
+            max-width: 100%;
+            height: auto;
+        }
+        @media only screen and (max-width: 768px) {
+            body {
+                font-size: 14px;
+            }
+        
+            header {
+                padding: 10px;
+            }
+        
+            nav ul li {
+                margin-right: 10px;
+            }
+        
+            .width-100.banner-section,
+            .width-100.skill-section {
+                padding: 30px 0;
+            }
+        
+            .banner-heading {
+                font-size: 2em;
+                margin-bottom: 15px;
+            }
+        
+            .banner-para {
+                font-size: 1em;
+                margin-bottom: 20px;
+            }
+        
+            .search-sect input {
+                padding: 8px;
+                font-size: 0.8em;
+            }
+        
+            .search-button {
+                padding: 8px 16px;
+                font-size: 1em;
+            }
+        
+            .width-100.skill-section .container {
+                grid-template-columns: repeat(1, 1fr);
+                gap: 15px;
+            }
+        
+            .skill-list,
+            .skill-list-2,
+            .skill-list1 {
+                width: 100%;
+                padding: 15px;
+            }
+        
+            .skill-img {
+                width: 80px;
+                height: 80px;
+                margin-right: 15px;
+            }
+        
+            .view-button {
+                height: 40px;
+                font-size: 1em;
+            }
+        
+            footer {
+                padding: 2px 0;
+            }
+        
+            .firelogo {
+                width: 150px;
+                height: 100px;
+            }
+        }
+        @media only screen and (max-width: 480px) {
+            /* Adjust styles for very small screens */
+        
+            header {
+                padding: 5px;
+            }
+        
+            .width-100.banner-section,
+            .width-100.skill-section {
+                padding: 20px 0;
+            }
+        
+            .banner-heading {
+                font-size: 1.5em;
+                margin-bottom: 10px;
+            }
+        
+            .banner-para {
+                font-size: 0.8em;
+                margin-bottom: 15px;
+            }
+        
+            .search-sect input {
+                padding: 6px;
+                font-size: 0.7em;
+            }
+        
+            .search-button {
+                padding: 6px 12px;
+                font-size: 0.9em;
+            }
+        
+            .width-100.skill-section .container {
+                grid-template-columns: repeat(1, 1fr);
+                gap: 10px;
+            }
+        
+            .skill-list,
+            .skill-list-2,
+            .skill-list1 {
+                padding: 10px;
+            }
+        
+            .skill-img {
+                width: 60px;
+                height: 60px;
+                margin-right: 10px;
+            }
+        
+            .view-button {
+                height: 30px;
+                font-size: 0.8em;
+            }
+        
+            footer {
+                padding: 1px 0;
+            }
+        
+            .firelogo {
+                width: 120px;
+                height: 80px;
+            }
+        }
+        
+    </style>
+    <title>Job Seekers</title>
+    
+</head>
+<script>
+  
+    document.addEventListener("DOMContentLoaded", function () {
+        const searchBoxes = document.querySelectorAll('.search-textbox');
+
+        searchBoxes.forEach(function (box) {
+            box.addEventListener('click', function () {
+                showSuggestedCompanies(box);
+            });
+        });
+
+        function showSuggestedCompanies(inputBox) {
+            let suggestions;
+
+            // Determine which input box was clicked and provide suggestions accordingly
+            switch (inputBox.placeholder) {
+                case 'Search Company':
+                    //suggestions = ['Google','Apple','IBM', 'Microsoft', 'Amazon','Flipkart','Reliance Industries','HDFC Bank','ITC']; -->
+                    suggestions = ['Google', 'Microsoft', 'Apple', 'IBM', 'Amazon', 'JPMorgan Chase', 'Bank of America', 'Goldman Sachs', 'Wells Fargo', 'Citibank', 'Mayo Clinic', 'Pfizer', 'Johnson & Johnson', 'Siemens Healthineers', 'Merck', 'Harvard University', 'Stanford University', 'MIT (Massachusetts Institute of Technology)', 'Khan Academy', 'Pearson', 'Toyota', 'General Electric (GE)', 'Boeing', 'Procter & Gamble', 'Samsung', 'Walmart', 'Amazon', 'Target', 'Alibaba', 'IKEA', 'Teleperformance', 'Convergys', 'Sykes', 'Accenture', 'Sitel', 'WPP', 'Omnicom Group', 'Publicis Groupe', 'Interpublic Group (IPG)', 'Dentsu', 'Marriott International', 'Hilton Worldwide', 'Airbnb', 'Starbucks', 'Delta Air Lines', 'FedEx', 'UPS', 'DHL', 'Maersk', 'Uber Freight'];
+
+
+                    break;
+                case 'Select Location':
+                    //suggestions = ['Delhi', 'Mumbai', 'Chandigarh','Punjab','Haryana','Kashmir','Sikkim','Rajasthan'];
+                    suggestions = ['Andhra Pradesh', 'Arunachal Pradesh', 'Assam', 'Bihar', 'Chhattisgarh', 'Goa', 'Gujarat', 'Haryana', 'Himachal Pradesh', 'Jharkhand', 'Karnataka', 'Kerala', 'Madhya Pradesh', 'Maharashtra', 'Manipur', 'Meghalaya', 'Mizoram', 'Nagaland', 'Odisha', 'Punjab', 'Rajasthan', 'Sikkim', 'Tamil Nadu', 'Telangana', 'Tripura', 'Uttar Pradesh', 'Uttarakhand', 'West Bengal', 'Andaman and Nicobar Islands', 'Chandigarh', 'Dadra and Nagar Haveli', 'Daman and Diu', 'Lakshadweep', 'Delhi', 'Puducherry'];
+
+                    break;
+                case 'All categories':
+                    suggestions = //['Marketing and Advertising','Finance and Banking', 'Information Technology (IT)','Education','Healthcare','Manufacturing','Hospitality','Transportation and Logistics','Customer Service'];
+                    ['IT Sector', 'Call Center', 'BPO', 'Sales', 'Marketing', 'Finance', 'Human Resources', 'Engineering', 'Healthcare', 'Education',
+'Manufacturing', 'Retail', 'Hospitality', 'Telecommunications', 'Transportation', 'Media and Entertainment', 'Real Estate', 'Construction',
+'Automotive', 'Aerospace', 'Energy', 'Pharmaceutical', 'Biotechnology', 'Customer Service','Research and Development', 'Fashion', 'E-commerce', 'Food and Beverage',
+'Sports', 'Legal', 'Environmental', 'Non-profit', 'Government', 'Social Services']
+                    break;
+                default:
+                    suggestions = [];
+                    break;
+            }
+
+            // Create a suggestion box
+            const suggestionBox = document.createElement('div');
+            suggestionBox.className = 'suggestion-box';
+
+            // Populate the suggestion box with items
+            suggestions.forEach(function (suggestion) {
+                const suggestionItem = document.createElement('div');
+                suggestionItem.className = 'suggestion-box-item';
+                suggestionItem.textContent = suggestion;
+
+                // Handle click on a suggestion
+                suggestionItem.addEventListener('click', function () {
+                    inputBox.value = suggestion;
+                    suggestionBox.style.display = 'none';
+                });
+
+                suggestionBox.appendChild(suggestionItem);
+            });
+            function openNewPage() {
+                // Get the form element
+                var form = document.getElementById("resumeForm");
+    
+                // Check if the form is valid before opening the new page
+                if (form.checkValidity()) {
+                    // Open the new page in a new tab or window
+                    window.open('submit.html', '_blank');
+                }
+            }
+
+            // Set the position of the suggestion box
+            const inputBoxRect = inputBox.getBoundingClientRect();
+            suggestionBox.style.left = inputBoxRect.left + 'px';
+            suggestionBox.style.top = inputBoxRect.bottom + 'px';
+
+            // Append the suggestion box to the body
+            document.body.appendChild(suggestionBox);
+
+            // Show the suggestion box
+            suggestionBox.style.display = 'block';
+
+            // Handle clicks outside the suggestion box to close it
+            document.addEventListener('click', function (event) {
+                if (!suggestionBox.contains(event.target) && event.target !== inputBox) {
+                    suggestionBox.style.display = 'none';
+                    document.removeEventListener('click', arguments.callee);
+                }
+            });
+        }
+    });
+</script>
+<body>
+
+    <header>
+        <h1>Welcome</h1>
+    </header>
+    <div>
+        <a href="new.html">
+        <img src="firelogo.png" class="firelogo" alt="logo">
+        </a>
+    </div>
+
+    <nav>
+        <ul>
+            <li><a href="new.html" class="hovering">Home</a></li>
+            <li><a href="jobs.,html.html" class="hovering">Jobs</a></li>
+            <li><a href="services.html" class="hovering">Services</a></li>
+            <li><a href="contact.html" class="hovering">Contact Us</a></li>
+        </ul>
+    </nav>
+    <a href="resume.html" class="create-resume-button glow-on-hover">Create Resume</a>
+    <div class="width-100 banner-section">
+        <div class="container">
+
+            <h1 class="banner-heading">Find The Best Job For Your Future</h1>
+            <p class="banner-para">It's a long-established fact that a reader will be distracted by the readable.</p>
+            <div class="search-sect">
+                <input type="text" class="search-textbox" placeholder="Search Company">
+                <input type="text" class="search-textbox" placeholder="Select Location">
+                <input type="text" class="search-textbox" placeholder="All categories">
+                <a href="jobs.,html.html"><button class="search-button">
+                        Search Here
+                    </button></a>
+            </div>
+        </div>
+    </div>
+
+    <div class="width-100 skill-section">
+        <div class="container">
+
+            <!-- Skill List 1 -->
+            <div class="white-box skill-list1">
+                <div class="width-33">
+                    <img class="skill-img" src="hospitality.jpg" alt="Hospitality">
+                </div>
+                <div class="width-66">
+                    <h4>Hospitality</h4>
+                    <a href="explore1.html" class="view-button">Explore Jobs</a>
+                </div>
+            </div>
+
+            <!-- Skill List 2 -->
+            <div class="white-box skill-list">
+                <div class="width-33">
+                    <img class="skill-img" src="telecommunication.jpg" alt="Telecommunication">
+                </div>
+                <div class="width-66">
+                    <h4>Telecommunication</h4>
+                    <a href="explore2.html" class="view-button">Explore Jobs</a>
+                </div>
+            </div>
+
+            <!-- Skill List 3 -->
+            <div class="white-box skill-list">
+                <div class="width-33">
+                    <img class="skill-img" src="marketing.jpg" alt="Marketing">
+                </div>
+                <div class="width-66">
+                    <h4>Marketing</h4>
+                    <a href="explore3.html" class="view-button">Explore Jobs</a>
+                </div>
+            </div>
+
+            <!-- Skill List 4 -->
+            <div class="white-box skill-list">
+                <div class="width-33">
+                    <img class="skill-img" src="socal serices.jpg" alt="Social Services">
+                </div>
+                <div class="width-66">
+                    <h4>Social Services</h4>
+                    <a href="explore4.html" class="view-button">Explore Jobs</a>
+                </div>
+            </div>
+
+            <!-- Skill List 5 -->
+            <div class="white-box skill-list">
+                <div class="width-33">
+                    <img class="skill-img" src="image it.png" alt="IT Sector">
+                </div>
+                <div class="width-66">
+                    <h4>IT Sector</h4>
+                    <a href="explore5.html" class="view-button" style="font-size:10px;" >Explore Jobs</a>
+                </div>
+            </div>
+
+            <!-- Skill List 6 -->
+            <div class="white-box skill-list">
+                <div class="width-33">
+                    <img class="skill-img" src="biotechnology.jpg" alt="Biotechnology">
+                </div>
+                <div class="width-66">
+                    <h4>Biotechnology</h4>
+                    <a href="explore6.html" class="view-button">Explore Jobs</a>
+                </div>
+            </div>
+
+            <!-- Skill List 7 -->
+            <div class="white-box skill-list">
+                <div class="width-33">
+                    <img class="skill-img" src="transportation.jpg" alt="Transportation">
+                </div>
+                <div class="width-66">
+                    <h4>Transportation</h4>
+                    <a href="explore7.html" class="view-button">Explore Jobs</a>
+                </div>
+            </div>
+
+            <!-- Skill List 8 -->
+            <div class="white-box skill-list">
+                <div class="width-33">
+                    <img class="skill-img" src="image BPO.png" style="height:100px; width:150px;" alt="BPO">
+                </div>
+                <div class="width-66 width-66-bpo">
+                    <h4>BPO</h4>
+                    <a href="explore8.html" class="view-button" style="font-size:12px;">Explore Jobs</a>
+                </div>
+            </div>
+
+            <!-- Skill List 9 -->
+            <div class="white-box skill-list">
+                <div class="width-33 ">
+                    <img class="skill-img" src="finance.jpg" alt="Finance">
+                </div>
+                <div class="width-66">
+                    <h4>Finance</h4>
+                    <a href="explore9.html" class="view-button">Explore Jobs</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <footer class="foot">
+        <p class="footer-class"><a href="https://www.betterteam.com/job-boards">&copy; 2023 Job Apply Platform</a></p>
+    </footer>
+
+</body>
+
+</html>
